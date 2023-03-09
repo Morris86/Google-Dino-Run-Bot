@@ -1,0 +1,66 @@
+package com.mycompany.trex_bot;
+
+import java.awt.AWTException;
+import java.awt.Color;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+public class TRex_Bot { 
+    
+    public static void main(String[] args) throws AWTException {
+        Robot robot = new Robot();
+        
+        robot.delay(2000);
+        
+        Color color1 = new Color(robot.getPixelColor(225, 465).getRGB());
+        
+        robot.mouseMove(480, 455);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(400);
+
+        for (int i=1;i<=2400;i++) {
+            if ((robot.getPixelColor(275, 485).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_SPACE);
+                 robot.keyRelease(KeyEvent.VK_SPACE);
+                 robot.delay(100);
+            }
+            if ((robot.getPixelColor(275, 449).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_DOWN);
+                 robot.delay(300);
+                 robot.keyRelease(KeyEvent.VK_DOWN);
+            }
+        }
+        for (int i=1;i<=2500;i++) {
+            if ((robot.getPixelColor(300, 485).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_SPACE);
+                 robot.keyRelease(KeyEvent.VK_SPACE);
+                 robot.delay(100);
+            }
+            if ((robot.getPixelColor(300, 449).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_DOWN);
+                 robot.delay(300);
+                 robot.keyRelease(KeyEvent.VK_DOWN);
+            }
+        }
+        for (int i=1;i<=10000;i++) {
+            if ((robot.getPixelColor(320, 485).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_SPACE);
+                 robot.keyRelease(KeyEvent.VK_SPACE);
+                 robot.delay(100);
+            }
+            if ((robot.getPixelColor(320, 449).equals(color1))){
+                 
+                 robot.keyPress(KeyEvent.VK_DOWN);
+                 robot.delay(300);
+                 robot.keyRelease(KeyEvent.VK_DOWN);
+            }
+        }
+    }
+}
